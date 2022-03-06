@@ -95,19 +95,31 @@ class _DetailScreen extends State<DetailScreen> {
                 children: <Widget>[
                   Padding(
                     padding: const EdgeInsets.all(4.0),
-                    child: Image.network('https://media-cdn.tripadvisor.com/media/photo-m/1280/16/a9/33/43/liburan-di-farmhouse.jpg'), 
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20.0),
+                      child:  Image.network('https://media-cdn.tripadvisor.com/media/photo-m/1280/16/a9/33/43/liburan-di-farmhouse.jpg')
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(4.0),
-                    child: Image.asset('assets/images/' + widget.img1),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20.0),
+                      child:Image.asset('assets/images/' + widget.img1),
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(4.0),
-                    child: Image.asset('assets/images/' + widget.img2),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20.0),
+                      child:Image.asset('assets/images/' + widget.img2),
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(4.0),
-                    child: Image.asset('assets/images/' + widget.img3),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20.0),
+                      child:Image.asset('assets/images/' + widget.img3),
+                    ),
                   ),
                 ],
               ),
