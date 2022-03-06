@@ -49,7 +49,8 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-  String _text = "Bil Genap kelipatan 3 : ";
+  String _text = "";
+  String _text2 = "Prima : ";
   void _incrementCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
@@ -58,7 +59,21 @@ class _MyHomePageState extends State<MyHomePage> {
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
       _counter++;
-      if (_counter % 2 == 0 && _counter % 3 == 0) _text += "$_counter, ";
+      int _flag = 0;
+      if (_counter <= 1) _flag = 1;
+
+      for (int _i = 2; _i <= _counter / 2; ++_i) {
+        if (_counter % _i == 0) {
+          _flag = 1;
+          break;
+        }
+      }
+      if (_flag == 0) {
+        _text = "$_counter adalah prima";
+        _text2 += "$_counter, ";
+      } else {
+        _text = "$_counter bukan prima";
+      }
     });
   }
 
@@ -105,6 +120,10 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               _text,
+              style: Theme.of(context).textTheme.headline4,
+            ),
+            Text(
+              _text2,
               style: Theme.of(context).textTheme.headline4,
             ),
           ],
