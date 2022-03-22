@@ -1,7 +1,5 @@
 import 'package:arief_apps/MainScreen.dart';
 import 'package:flutter/material.dart';
-import 'package:arief_apps/DetailScreen.dart';
-// import 'package:arief_apps/MainScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Korean Tourism Place',
       theme: ThemeData(),
-      home: const MainScreen(),
+      home: MainScreen(),
     );
   }
 }
