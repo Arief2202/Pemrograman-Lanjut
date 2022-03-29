@@ -2,9 +2,9 @@ import 'package:arief_apps/model/tourism_place.dart';
 import 'package:flutter/material.dart';
 
 class DetailScreen extends StatelessWidget {
-  const DetailScreen({Key? key, required this.place}) : super(key: key);
-
   final TourismPlace place;
+  const DetailScreen({required this.place});
+
   @override
   Widget build(BuildContext context){
     return Scaffold(
@@ -18,7 +18,7 @@ class DetailScreen extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Image.asset('assets/images/' + place.img),
+              Image.network(place.img),
               Container( //Container for title
                 margin: EdgeInsets.only(top: 16.0),
                 child: Text(
@@ -62,7 +62,7 @@ class DetailScreen extends StatelessWidget {
               Container( //Container for Description
                 padding: const EdgeInsets.all(16.0),
                 child: Text(
-                  place.desc,
+                  place.description,
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 16.0,
@@ -77,32 +77,25 @@ class DetailScreen extends StatelessWidget {
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: <Widget>[
-                    // Padding(
-                    //   padding: const EdgeInsets.all(4.0),
-                    //   child: ClipRRect(
-                    //     borderRadius: BorderRadius.circular(20.0),
-                    //     child:  Image.network('https://media-cdn.tripadvisor.com/media/photo-m/1280/16/a9/33/43/liburan-di-farmhouse.jpg')
-                    //   ),
-                    // ),
                     Padding(
                       padding: const EdgeInsets.all(4.0),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(20.0),
-                        child:Image.asset('assets/images/' + place.img1),
+                        child:Image.network(place.img1),
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(4.0),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(20.0),
-                        child:Image.asset('assets/images/' + place.img2),
+                        child:Image.network(place.img2),
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(4.0),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(20.0),
-                        child:Image.asset('assets/images/' + place.img3),
+                        child:Image.network(place.img3),
                       ),
                     ),
                   ],
