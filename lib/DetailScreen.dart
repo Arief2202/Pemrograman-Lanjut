@@ -1,4 +1,5 @@
 import 'package:arief_apps/model/tourism_place.dart';
+import 'package:arief_apps/editScreen.dart';
 import 'package:flutter/material.dart';
 
 class DetailScreen extends StatelessWidget {
@@ -10,6 +11,21 @@ class DetailScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(place.title),
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.edit_outlined),
+            onPressed: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) {
+                  return editScreen(
+                  place: place,
+                  );
+                }),
+              );
+            }
+          ),
+        ],
       ),
       body: SafeArea(
         child: ListView(

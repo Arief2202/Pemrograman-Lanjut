@@ -1,5 +1,6 @@
 import 'package:arief_apps/doneTourismList.dart';
 import 'package:arief_apps/tourismList.dart';
+import 'package:arief_apps/Create.dart';
 import 'package:arief_apps/model/tourism_place.dart';
 import 'package:flutter/material.dart';
 
@@ -28,6 +29,17 @@ class _MainScreenState extends State<MainScreen>{
                   return DoneTourismList(
                     doneTourismPlaceList: doneTourismPlaceList,
                   );
+                }),
+              );
+            }
+          ),
+          IconButton(
+            icon: const Icon(Icons.add),
+            onPressed: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) {
+                  return Create();
                 }),
               );
             }
